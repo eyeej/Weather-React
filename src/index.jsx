@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import axios from "axios";
-import WeatherSearch from "./WeatherSearch";
+import WeatherSearch from "./app";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./styles.css";
 
-export default function WeatherSearch() {
+function WeatherSearch() {
   const [city, setCity] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
@@ -69,3 +69,5 @@ export default function WeatherSearch() {
     return form;
   }
 }
+
+export default WeatherSearch

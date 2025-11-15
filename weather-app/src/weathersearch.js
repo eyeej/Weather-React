@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import './FormattedDate';
 import "./styles.css";
 import './App.css';
 import './weathersearch.css';
+
 
 function WeatherSearch() {
   const [city, setCity] = useState("");
@@ -15,6 +17,7 @@ function WeatherSearch() {
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
       icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
     });

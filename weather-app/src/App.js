@@ -3,6 +3,7 @@ import WeatherSearch from './weathersearch'
 import './App.css';
 import './weathersearch.css';
 import './FormattedDate';
+import WeatherForecast from './WeatherForecast';
 
 export default function App() {
   return (

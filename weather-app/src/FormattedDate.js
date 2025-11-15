@@ -9,8 +9,8 @@ export default function FormattedDate(props) {
         "Thursday",
         "Friday",
         "Saturday",
-
     ];
+    
     let day = days[props.date.getDay()];
     let hours = props.date.getHours();
     if (hours < 10) {

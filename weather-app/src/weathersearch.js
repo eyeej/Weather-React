@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import './FormattedDate';
+import FormattedDate from './FormattedDate';
 import "./styles.css";
 import './App.css';
 import './weathersearch.css';
@@ -57,18 +57,19 @@ function WeatherSearch() {
 
   if (loaded) {
     return (
+     <div>
+    {form}
+    <div>
+      <div>Temperature: {Math.round(weather.temperature)}°C</div>
+      <div>Description: {weather.description}</div>
+      <div>Humidity: {weather.humidity}%</div>
+      <div>Wind: {weather.wind} km/h</div>
+      <div><FormattedDate date={weather.date} /></div>
       <div>
-        {form}
-        <ul>
-          <ul>Temperature: {Math.round(weather.temperature)}°C</ul>
-          <ul>Description: {weather.description}</ul>
-          <ul>Humidity: {weather.humidity}%</ul>
-          <ul>Wind: {weather.wind} km/h</ul>
-          <ul>
-            <img src={weather.icon} alt={weather.description} />
-          </ul>
-        </ul>
+        <img src={weather.icon} alt={weather.description} />
       </div>
+    </div>
+  </div>
     );
   } else {
     return form;

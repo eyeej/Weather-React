@@ -3,7 +3,6 @@ import axios from "axios";
 import FormattedDate from './FormattedDate';
 import "./styles.css";
 import './App.css';
-import './weathersearch.css';
 
 
 function WeatherSearch() {
@@ -59,7 +58,7 @@ function WeatherSearch() {
     return (
      <div>
     {form}
-    <div>
+    <div className="WeatherSearch">
       <div>Temperature: {Math.round(weather.temperature)}°C</div>
       <div>Description: {weather.description}</div>
       <div>Humidity: {weather.humidity}%</div>

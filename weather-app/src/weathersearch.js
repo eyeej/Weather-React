@@ -19,6 +19,8 @@ function WeatherSearch() {
       date: new Date(response.data.dt * 1000),
       icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
+      latitude: response.data.coord.lat,      
+      longitude: response.data.coord.lon, 
     });
   }
 
@@ -39,7 +41,7 @@ function WeatherSearch() {
       .then(displayWeather)
       .catch((error) => {
         console.error(error);
-        alert("Sorry, we couldn’t find that city. Please try again.");
+        alert("Sorry, we couldn't find that city. Please try again.");
       });
   }
 
@@ -49,32 +51,29 @@ function WeatherSearch() {
 
   const form = (
     <div className="WeatherSearch">
-    <form onSubmit={handleSubmit}>
-      <input type="search" placeholder="Enter City..." onChange={updateCity} />
-      <button type="submit">Search</button>
-    </form>
-       </div>
+      <form onSubmit={handleSubmit}>
+        <input type="search" placeholder="Enter City..." onChange={updateCity} />
+        <button type="submit">Search</button>
+      </form>
+    </div>
   );
 
   if (loaded) {
     return (
-     <div>
-    {form}
-    <div className="WeatherSearch">
-      <div className="Temperature">
-      <div>Temperature: {Math.round(weather.temperature)}°C</div>
-      <div>Description: {weather.description}</div>
-      <div>Humidity: {weather.humidity}%</div>
-      <div>Wind: {weather.wind} km/h</div>
-      <div><FormattedDate date={weather.date} /></div>
       <div>
-        <img src={weather.icon} alt={weather.description} />
+        {form}
+        <div className="WeatherSearch">
+          <div className="Temperature">
+            <div>Temperature: {Math.round(weather.temperature)}°C</div>
+            <div>Description: {weather.description}</div>
+            <div>Humidity: {weather.humidity}%</div>
+            <div>Wind: {weather.wind} km/h</div>
+            <div><FormattedDate date={weather.date} /></div>
+            <div><img src={weather.icon} alt={weather.description} /></div>
+          </div>
+        </div>
       </div>
-     </div>
-    </div>
-  </div>
     );
-    
   } else {
     return form;
   }

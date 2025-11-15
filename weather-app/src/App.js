@@ -10,7 +10,6 @@ export default function App() {
       <div className="App">
       <div className="container">
         <WeatherSearch />
-        <WeatherForecast />
       <footer>
         This Project was Coded by{" "} <a href="https://github.com/eyeej">Emma Yee-Joy</a> and is open-sourced on{" "}  
         <a href="https://github.com/eyeej/Weather-React">Github</a>{" "} and is{" "} hosted on <a href="https://shecodes-react-weather-hw.netlify.app/">Netlify</a>

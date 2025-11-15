@@ -10,7 +10,9 @@ export default function App() {
     
       <h1>Weather App</h1>
       <footer>
-        This Project was Coded by Emma Yee-Joy and is open-sourced on <a href="https://github.com/eyeej">Github</a>
+        This Project was Coded by{" "} Emma Yee-Joy and is open-sourced on 
+        <a href="https://github.com/eyeej">Github</a>{" "} and is{" "} hosted on 
+        <a href="https://shecodes-react-weather-hw.netlify.app/">Netlify</a>
       </footer>
     </div>
   </div>

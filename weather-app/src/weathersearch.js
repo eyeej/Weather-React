@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./styles.css";
-
+import './App.css';
+import './weathersearch.css';
 
 function WeatherSearch() {
   const [city, setCity] = useState("");
@@ -56,13 +57,13 @@ function WeatherSearch() {
       <div>
         {form}
         <ul>
-          <li>Temperature: {Math.round(weather.temperature)}°C</li>
-          <li>Description: {weather.description}</li>
-          <li>Humidity: {weather.humidity}%</li>
-          <li>Wind: {weather.wind} km/h</li>
-          <li>
+          <ul>Temperature: {Math.round(weather.temperature)}°C</ul>
+          <ul>Description: {weather.description}</ul>
+          <ul>Humidity: {weather.humidity}%</ul>
+          <ul>Wind: {weather.wind} km/h</ul>
+          <ul>
             <img src={weather.icon} alt={weather.description} />
-          </li>
+          </ul>
         </ul>
       </div>
     );

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./styles.css";
 
+
 function WeatherSearch() {
   const [city, setCity] = useState("");
   const [loaded, setLoaded] = useState(false);

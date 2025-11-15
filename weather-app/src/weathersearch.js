@@ -48,10 +48,12 @@ function WeatherSearch() {
   }
 
   const form = (
+    <div className="WeatherSearch">
     <form onSubmit={handleSubmit}>
       <input type="search" placeholder="Enter City..." onChange={updateCity} />
       <button type="submit">Search</button>
     </form>
+       </div>
   );
 
   if (loaded) {
@@ -59,6 +61,7 @@ function WeatherSearch() {
      <div>
     {form}
     <div className="WeatherSearch">
+      <div className="Temperature">
       <div>Temperature: {Math.round(weather.temperature)}°C</div>
       <div>Description: {weather.description}</div>
       <div>Humidity: {weather.humidity}%</div>
@@ -67,9 +70,11 @@ function WeatherSearch() {
       <div>
         <img src={weather.icon} alt={weather.description} />
       </div>
+     </div>
     </div>
   </div>
     );
+    
   } else {
     return form;
   }
